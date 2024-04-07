@@ -1,5 +1,37 @@
-.App {
-  text-align: center;
+:root {
+  --navbar-height: 60px;
+}
+
+.new{
+  margin-top: 30px;
+  width: 100%;
+  height: 800px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.inner{
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: black;
+  height: 700px;
+  width: 600px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.more--inner{
+  
+  border-radius: 10px;
+  margin-top: 20px;
+  height: 500px;
+  width: 500px;
+  background-size: cover;
 }
 
 .App-logo {
@@ -28,6 +60,13 @@
   color: #61dafb;
 }
 
+.form--div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +74,421 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+ /* table */
+ .table--outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.table--div {
+  width: 600px;
+  background-color: #6D4C41; /* Dark wood color for the table */
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table--div h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.table-record {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 8px 16px;
+  margin: 10px 0;
+  background-color: transparent;
+  color: white;
+}
+
+.refresh-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #A9A9A9; /* Dark gray color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.refresh-button:hover {
+  background-color: #808080;
+}
+
+/* Shop */
+.shop-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - var(--navbar-height));
+  padding-top: var(--navbar-height); /* This ensures content starts below the navbar */
+}
+
+.shop-content {
+  width: 600px;
+  background-color: #6D4C41; /* Dark wood color for the table */
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: white;
+}
+
+.shop-content h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.shop-content p {
+  margin-bottom: 20px;
+}
+
+.shop-content button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #A9A9A9; /* Dark gray color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.shop-content button:hover {
+  background-color: #808080;
+}
+
+/* dashboard */
+.centered-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 60px); 
+}
+
+.dashboard-content {
+  width: 600px;
+  background-color: #6D4C41; 
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: white;
+  margin-top: var(--navbar-height);
+}
+
+.dashboard-content h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.dashboard-content p {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/* Servers */
+.server-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.server-item {
+  cursor: pointer;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  width: 300px; /* or any width you prefer */
+  text-align: center;
+}
+
+/* Add any additional styling you want for the server items */
+.server-item:hover {
+  background-color: #444;
+}
+
+/* Game */
+.game-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - var(--navbar-height)); /* Adjust this if you have a navbar */
+  /* Your existing styles for game-container */
+}
+
+.game-info {
+  text-align: left;
+  margin-left: 20px;
+  color: #fff; /* Adjust text color as needed */
+}
+
+.game-info p {
+  margin: 5px 0;
+}
+
+.game-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: #333; /* Dark background for the control panel */
+  display: flex;
+  justify-content: space-around; /* This will space out your buttons evenly */
+  align-items: center;
+}
+
+.game-controls button,
+.game-controls span {
+  flex: 1; /* Give each button and the span equal width */
+  margin: 0 5px; /* Space out the buttons */
+  padding: 10px; /* Padding inside buttons */
+  background: #6D4C41; /* Button background color */
+  color: white; /* Button text color */
+  border: none;
+  border-radius: 5px; /* Rounded corners for buttons */
+  cursor: pointer;
+}
+
+.game-controls button:hover {
+  background: #A9A9A9; /* Button hover state color */
+}
+
+.game-table {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #163020;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #163020; /* Table color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 70%;
+  height: 70vh;
+  position: relative;
+}
+
+.user-box {
+  position: absolute;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.top-user {
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 25%;
+  background-color: red;
+}
+
+.bottom-user {
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 25%;
+  background-color: blue;
+}
+
+.left-user {
+  top: 50%;
+  left: -350px;
+  transform: translateY(-50%);
+  width: 30%;
+  height: 25%;
+  background-color: green;
+}
+
+.right-user {
+  top: 50%;
+  right: -350px;
+  transform: translateY(-50%);
+  width: 30%;
+  height: 25%;
+  background-color: yellow;
+}
+
+.community-cards {
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.game-info {
+  width: 25%;
+  text-align: left;
+  color: #fff; /* Adjust text color as needed */
+}
+
+.game-info p {
+  margin: 5px 0;
+}
+
+.card-image {
+  width: 100px; /* Adjust size as needed */
+  margin: 0 5px;
+}
+
+.player-info {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.player {
+  text-align: center;
+}
+
+.player-cards {
+  display: flex;
+  justify-content: center;
+}
+
+.player-nickname {
+  font-weight: bold;
+}
+
+.pot-info {
+  margin-bottom: 20px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-around; /* This will space out the items evenly */
+  padding: 20px;
+  background-color: #f8f9fa;
+  margin-bottom: 20px;
+}
+
+.dashboard-header > div {
+  background-color: white; /* Set the background color for each box */
+  border-radius: 10px; /* This makes the corners rounded */
+  padding: 10px 20px; /* Add some padding inside the boxes */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* A subtle shadow */
+  flex: 1; /* This will make each box take up equal space */
+  margin: 0 10px; /* This adds some space between the boxes */
+  text-align: center; /* Aligns text in the center of the box */
+}
+
+/* You may also want to add some media queries to handle responsiveness */
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column; /* Stack them on top of each other on smaller screens */
+    align-items: center; /* Center-align items */
+  }
+
+  .dashboard-header > div {
+    width: 80%; /* Set a width for the boxes */
+    margin-bottom: 10px; /* Add space between stacked boxes */
+  }
+}
+
+.dashboard-centered-content {
+  justify-content: center;
+  align-items: center;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+
+.dashboard-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.meter-list {
+  margin: 20px 0;
+}
+
+.meter-list h2 {
+  margin-bottom: 15px;
+}
+
+.meter {
+  margin:0%;
+  padding: 0%;
+}
+
+.meter-number {
+  font-weight: bold;
+  width: 30px; /* Width of the label area */
+  display: inline-block;
+}
+
+.meter-bar {
+  height: 20px;
+  border-radius: 5px;
+  color: white;
+  line-height: 20px;
+  padding-left: 5px;
+  background-color: #ddd;
+  overflow: hidden; /* Ensure the content doesn't overflow */
+  position: relative; /* For text positioning */
+}
+
+.meter-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  background-color: inherit;
+  transition: width 0.4s ease;
+}
+
+.meter-bar:hover::before {
+  width: 100%;
+}
+
+.energy-usage-chart, .energy-usage-pie-chart, .progress-meter, .newsletter-counter, .meter-list {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.chart, .pie-chart {
+  height: 200px;
+  margin-top: 10px;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
 }
