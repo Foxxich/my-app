@@ -1,30 +1,33 @@
-import React, { useContext } from "react";
+import React from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Link } from "react-router-dom";
+import { LinkContainer } from "react-router-bootstrap"; // react-router-bootstrap for integration
+import './NavBarr.css';
 
 export default function NavBarr() {
   return (
-    <Navbar bg="dark" data-bs-theme="dark">
+    <Navbar expand="lg">
       <Container>
-        <Navbar.Brand href="/">Counter</Navbar.Brand>
+        <LinkContainer to="/">
+          <Navbar.Brand>Counter</Navbar.Brand>
+        </LinkContainer>
         <Nav className="me-auto">
-          <Nav.Link as={Link} to="/">
-            Dashboard
-          </Nav.Link>
-          <Nav.Link as={Link} to="/Table">
-            Table
-          </Nav.Link>
-          <Nav.Link as={Link} to="/Chart">
-            Chart
-          </Nav.Link>
-          <Nav.Link as={Link} to="/login">
-            Login
-          </Nav.Link>
-          <Nav.Link as={Link} to="/register">
-            Register
-          </Nav.Link>
+          <LinkContainer to="/">
+            <Nav.Link>Dashboard</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to="/Table">
+            <Nav.Link>Table</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to="/Chart">
+            <Nav.Link>Chart</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to="/login">
+            <Nav.Link>Login</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to="/register">
+            <Nav.Link>Register</Nav.Link>
+          </LinkContainer>
         </Nav>
       </Container>
     </Navbar>

@@ -1,0 +1,67 @@
+/* Footer.css */
+.site-footer {
+  background-color: #007bff; /* Bootstrap primary blue */
+  color: white;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+  padding: 0 2rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-content div,
+.footer-bottom {
+  margin: 0.5rem;
+  color: white; /* Ensure text is readable on blue background */
+}
+
+.footer-content h5 {
+  margin-bottom: 0.5rem;
+}
+
+.footer-content p,
+.footer-content a {
+  text-decoration: none;
+  line-height: 1.5;
+}
+
+.footer-content a {
+  color: #aad8ff; /* Lighter blue for links for a bit of contrast */
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
+  color: #fff; /* White on hover for better visibility */
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.3); /* Light border for top of footer-bottom */
+}
+
+.footer-logo img {
+  width: 100px; /* Adjust as needed */
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer-content div {
+    margin-bottom: 1rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.8rem;
+  }
+}

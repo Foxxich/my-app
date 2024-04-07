@@ -2,6 +2,21 @@
   --navbar-height: 60px;
 }
 
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+button.btn {
+  background-color: #0056b3;
+}
+
 .new{
   margin-top: 30px;
   width: 100%;
@@ -112,307 +127,67 @@
   color: white;
 }
 
-.refresh-button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin-top: 20px;
-  background-color: #A9A9A9; /* Dark gray color */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.refresh-button:hover {
-  background-color: #808080;
-}
-
-/* Shop */
-.shop-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: calc(100vh - var(--navbar-height));
-  padding-top: var(--navbar-height); /* This ensures content starts below the navbar */
-}
-
-.shop-content {
-  width: 600px;
-  background-color: #6D4C41; /* Dark wood color for the table */
-  border-radius: 10px;
-  padding: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  color: white;
-}
-
-.shop-content h1 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.shop-content p {
-  margin-bottom: 20px;
-}
-
-.shop-content button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  background-color: #A9A9A9; /* Dark gray color */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.shop-content button:hover {
-  background-color: #808080;
-}
-
-/* dashboard */
-.centered-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: calc(100vh - 60px); 
-}
-
-.dashboard-content {
-  width: 600px;
-  background-color: #6D4C41; 
-  border-radius: 10px;
-  padding: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  color: white;
-  margin-top: var(--navbar-height);
-}
-
-.dashboard-content h1 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.dashboard-content p {
-  text-align: left;
-  margin-bottom: 20px;
-}
-
-/* Servers */
-.server-list-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-}
-
-.server-item {
-  cursor: pointer;
-  padding: 10px;
-  margin: 5px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #333;
-  color: #fff;
-  width: 300px; /* or any width you prefer */
-  text-align: center;
-}
-
-/* Add any additional styling you want for the server items */
-.server-item:hover {
-  background-color: #444;
-}
-
-/* Game */
-.game-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: calc(100vh - var(--navbar-height)); /* Adjust this if you have a navbar */
-  /* Your existing styles for game-container */
-}
-
-.game-info {
-  text-align: left;
-  margin-left: 20px;
-  color: #fff; /* Adjust text color as needed */
-}
-
-.game-info p {
-  margin: 5px 0;
-}
-
-.game-controls {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 20px;
-  background: #333; /* Dark background for the control panel */
-  display: flex;
-  justify-content: space-around; /* This will space out your buttons evenly */
-  align-items: center;
-}
-
-.game-controls button,
-.game-controls span {
-  flex: 1; /* Give each button and the span equal width */
-  margin: 0 5px; /* Space out the buttons */
-  padding: 10px; /* Padding inside buttons */
-  background: #6D4C41; /* Button background color */
-  color: white; /* Button text color */
-  border: none;
-  border-radius: 5px; /* Rounded corners for buttons */
-  cursor: pointer;
-}
-
-.game-controls button:hover {
-  background: #A9A9A9; /* Button hover state color */
-}
-
-.game-table {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 2px solid #163020;
-  border-radius: 20px;
-  padding: 20px;
-  background-color: #163020; /* Table color */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 70%;
-  height: 70vh;
-  position: relative;
-}
-
-.user-box {
-  position: absolute;
-  padding: 10px;
-  border: 1px solid #ccc;
-  background-color: #f9f9f9;
-  text-align: center;
-}
-
-.top-user {
-  top: -50px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 30%;
-  height: 25%;
-  background-color: red;
-}
-
-.bottom-user {
-  bottom: -50px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 30%;
-  height: 25%;
-  background-color: blue;
-}
-
-.left-user {
-  top: 50%;
-  left: -350px;
-  transform: translateY(-50%);
-  width: 30%;
-  height: 25%;
-  background-color: green;
-}
-
-.right-user {
-  top: 50%;
-  right: -350px;
-  transform: translateY(-50%);
-  width: 30%;
-  height: 25%;
-  background-color: yellow;
-}
-
-.community-cards {
-  width: 75%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-}
-
-.game-info {
-  width: 25%;
-  text-align: left;
-  color: #fff; /* Adjust text color as needed */
-}
-
-.game-info p {
-  margin: 5px 0;
-}
-
-.card-image {
-  width: 100px; /* Adjust size as needed */
-  margin: 0 5px;
-}
-
-.player-info {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  margin-top: 20px;
-}
-
-.player {
-  text-align: center;
-}
-
-.player-cards {
-  display: flex;
-  justify-content: center;
-}
-
-.player-nickname {
-  font-weight: bold;
-}
-
-.pot-info {
-  margin-bottom: 20px;
-}
-
+/* DashboardHeader.css */
 .dashboard-header {
   display: flex;
-  justify-content: space-around; /* This will space out the items evenly */
+  justify-content: space-between;
   padding: 20px;
-  background-color: #f8f9fa;
   margin-bottom: 20px;
 }
 
-.dashboard-header > div {
-  background-color: white; /* Set the background color for each box */
-  border-radius: 10px; /* This makes the corners rounded */
-  padding: 10px 20px; /* Add some padding inside the boxes */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* A subtle shadow */
-  flex: 1; /* This will make each box take up equal space */
-  margin: 0 10px; /* This adds some space between the boxes */
-  text-align: center; /* Aligns text in the center of the box */
+.dashboard-item {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* This aligns items on opposite ends */
+  position: relative; /* For absolute positioning of the icon */
+  flex-grow: 1;
+  margin: 0 10px;
 }
 
-/* You may also want to add some media queries to handle responsiveness */
+.icon {
+  font-size: 1.5rem; /* Adjust the size as needed */
+  margin-left: 0.5rem; /* Space between text and icon */
+}
+
+/* CSS */
+.progress-bar-background {
+  background-color: #ddd;
+  height: 10px;
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  background-color: #4caf50; /* This color should be visible */
+  height: 100%;
+  border-radius: 5px; /* Apply to the left side only if necessary */
+  transition: width 0.5s ease-in-out;
+}
+
+/* Ensure the progress bar is visible even at low percentages */
+.progress-bar::after {
+  content: '';
+  display: block;
+  background-color: #4caf50; /* Same as the progress bar for consistency */
+  width: 100%;
+  height: 100%;
+}
+
+
 @media (max-width: 768px) {
   .dashboard-header {
-    flex-direction: column; /* Stack them on top of each other on smaller screens */
-    align-items: center; /* Center-align items */
+    flex-direction: column;
   }
 
-  .dashboard-header > div {
-    width: 80%; /* Set a width for the boxes */
-    margin-bottom: 10px; /* Add space between stacked boxes */
+  .dashboard-item {
+    width: 100%;
+    margin-bottom: 10px;
+    justify-content: space-between;
   }
 }
 

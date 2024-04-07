@@ -37,6 +37,8 @@ const Dashboard = () => {
     { id: 5, color: "lightblue", progress: 100, label: "Complete!" },
   ];
 
+  const progressPercentage = 10;
+
   return (
     <div>
       {/* Navigation Bar Placeholder */}
@@ -47,12 +49,31 @@ const Dashboard = () => {
         <div className="Dashboard-content">
           {/* Header Content */}
           <header className="dashboard-header">
-            <div className="monthly-update">WYDATKI MIESIĘCZNE: 200,99 PLN</div>
-            <div className="monthly-savings">
-              EKONOMIA MIESIĘCZNA: 50,00 PLN
+            <div className="dashboard-item monthly-update">
+              <span>WYDATKI MIESIĘCZNE: 200,99 PLN</span>
+              <i className="bi bi-currency-exchange icon"></i>{" "}
+              {/* Bootstrap icon */}
             </div>
-            <div className="annual-progress">PROGRES ROCZNY: 10%</div>
-            <div className="newsletter-count">NEWSLETTERS: 18</div>
+            <div className="dashboard-item monthly-savings">
+              <span>EKONOMIA MIESIĘCZNA: 50,00 PLN</span>
+              <i className="bi bi-piggy-bank icon"></i> {/* Bootstrap icon */}
+            </div>
+            <div className="dashboard-item annual-progress">
+              <span>PROGRES ROCZNY:</span>
+              <div className="progress-bar-background">
+                <div
+                  className="progress-bar"
+                  style={{ width: `${progressPercentage}%` }}
+                ></div>
+              </div>
+              <span>{progressPercentage}%</span>
+              <i className="bi bi-hourglass-split icon"></i>
+            </div>
+            <div className="dashboard-item newsletter-count">
+              <span>NEWSLETTERS: 18</span>
+              <i className="bi bi-envelope-fill icon"></i>{" "}
+              {/* Bootstrap icon */}
+            </div>
           </header>
 
           {/* Main Dashboard */}

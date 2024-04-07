@@ -1,0 +1,37 @@
+/* NavBarr.css */
+.nav-link.active {
+  background-color: #0056b3 !important; /*er shade of blue for active state */
+  color: white !important;
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+  color: white; /* Ensures all text is white */
+}
+
+/* To ensure non-active links are also styled correctly */
+.navbar .nav-link {
+  opacity: 0.7; /* Slightly dim non-active links for better contrast */
+}
+
+.navbar .nav-link:hover {
+  opacity: 1; /* Full opacity on hover */
+}
+
+.navbar {
+  background-color: #007bff !important; /* Bootstrap's blue */
+}
+
+/* Style for all navbar text to ensure it's white */
+.navbar .navbar-brand,
+.navbar .nav-link {
+  color: white !important;
+}
+
+/* Specific style for active or hovered nav links */
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+  background-color: #0056b3 !important; /* A slightlyer shade of blue for contrast */
+  color: white !important;
+  border-radius: 5px; /* Optional: adds rounded corners to active/hover links */
+}
