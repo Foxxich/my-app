@@ -45,81 +45,69 @@ const Dashboard = () => {
       <NavBarr />
 
       {/* Centered Content */}
-      <div className="dashboard-centered-content">
-        <div className="Dashboard-content">
-          {/* Header Content */}
-          <header className="dashboard-header">
-            <div className="dashboard-item monthly-update">
-              <span>WYDATKI MIESIĘCZNE: 200,99 PLN</span>
-              <i className="bi bi-currency-exchange icon"></i>{" "}
-              {/* Bootstrap icon */}
+      <div className="page-centered-content">
+        <section className="dashboard-header">
+          <div className="dashboard-item monthly-update">
+            <span>WYDATKI MIESIĘCZNE: 200,99 PLN</span>
+            <i className="bi bi-currency-exchange icon"></i>{" "}
+            {/* Bootstrap icon */}
+          </div>
+          <div className="dashboard-item monthly-savings">
+            <span>EKONOMIA MIESIĘCZNA: 50,00 PLN</span>
+            <i className="bi bi-piggy-bank icon"></i> {/* Bootstrap icon */}
+          </div>
+          <div className="dashboard-item annual-progress">
+            <span>PROGRES ROCZNY: {progressPercentage}%</span>
+            <i className="bi bi-hourglass-split icon"></i>
+            <div className="progress-bar-background">
+              <div
+                className="progress-bar"
+                style={{ width: `${progressPercentage}%` }}
+              ></div>
             </div>
-            <div className="dashboard-item monthly-savings">
-              <span>EKONOMIA MIESIĘCZNA: 50,00 PLN</span>
-              <i className="bi bi-piggy-bank icon"></i> {/* Bootstrap icon */}
-            </div>
-            <div className="dashboard-item annual-progress">
-              <span>PROGRES ROCZNY:</span>
-              <div className="progress-bar-background">
-                <div
-                  className="progress-bar"
-                  style={{ width: `${progressPercentage}%` }}
-                ></div>
+          </div>
+          <div className="dashboard-item newsletter-count">
+            <span>NEWSLETTERS: 18</span>
+            <i className="bi bi-envelope-fill icon"></i> {/* Bootstrap icon */}
+          </div>
+        </section>
+
+        {/* TODO: Problem ze strona */}
+        <section className="energy-usage-chart">
+          <h2>Zużycie energii</h2>
+          <div className="chart">
+            <Plot
+              data={[trace]}
+              layout={layout}
+              style={{ width: "100%", height: "100%" }}
+            />
+          </div>
+        </section>
+
+        {/* Energy Usage Pie Chart Placeholder */}
+        <section className="energy-usage-pie-chart">
+          <h2>Podział zużytej energii</h2>
+          <div className="pie-chart">Pie Chart Placeholder</div>
+        </section>
+
+        {/* Meter List Placeholder */}
+        <section className="meter-list">
+          <h2>Liczniki</h2>
+          {meters.map((meter) => (
+            <div key={meter.id} className="meter">
+              <span className="meter-number">{meter.id}</span>
+              <div
+                className="meter-bar"
+                style={{
+                  width: `${meter.progress}%`,
+                  backgroundColor: meter.color,
+                }}
+              >
+                {meter.progress < 100 ? `${meter.progress}%` : meter.label}
               </div>
-              <span>{progressPercentage}%</span>
-              <i className="bi bi-hourglass-split icon"></i>
             </div>
-            <div className="dashboard-item newsletter-count">
-              <span>NEWSLETTERS: 18</span>
-              <i className="bi bi-envelope-fill icon"></i>{" "}
-              {/* Bootstrap icon */}
-            </div>
-          </header>
-
-          {/* Main Dashboard */}
-          <main className="dashboard-main-content">
-            <div className="dashboard-widgets">
-              {/* Energy Usage Line Chart Placeholder */}
-              <section className="energy-usage-chart">
-                <h2>Zużycie energii</h2>
-                <div className="chart">
-                  <Plot
-                    data={[trace]}
-                    layout={layout}
-                    style={{ width: "100%", height: "100%" }}
-                  />
-                </div>
-              </section>
-
-              {/* Energy Usage Pie Chart Placeholder */}
-              <section className="energy-usage-pie-chart">
-                <h2>Podział zużytej energii</h2>
-                <div className="pie-chart">Pie Chart Placeholder</div>
-              </section>
-
-              {/* Meter List Placeholder */}
-              <section className="meter-list">
-                <h2>Liczniki</h2>
-                {meters.map((meter) => (
-                  <div key={meter.id} className="meter">
-                    <span className="meter-number">{meter.id}</span>
-                    <div
-                      className="meter-bar"
-                      style={{
-                        width: `${meter.progress}%`,
-                        backgroundColor: meter.color,
-                      }}
-                    >
-                      {meter.progress < 100
-                        ? `${meter.progress}%`
-                        : meter.label}
-                    </div>
-                  </div>
-                ))}
-              </section>
-            </div>
-          </main>
-        </div>
+          ))}
+        </section>
       </div>
     </div>
   );

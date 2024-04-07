@@ -127,25 +127,24 @@ button.btn {
   color: white;
 }
 
+#section {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* DashboardHeader.css */
 .dashboard-header {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
-  margin-bottom: 20px;
 }
 
-.dashboard-item {
-  background-color: white;
-  border-radius: 10px;
-  padding: 10px;
+.dashboard-item, .energy-usage-chart, .energy-usage-pie-chart, .meter-list, .table-info {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* This aligns items on opposite ends */
-  position: relative; /* For absolute positioning of the icon */
+  margin: 10px; /* Ensure there's a margin on both sides */
   flex-grow: 1;
-  margin: 0 10px;
 }
 
 .icon {
@@ -153,7 +152,6 @@ button.btn {
   margin-left: 0.5rem; /* Space between text and icon */
 }
 
-/* CSS */
 .progress-bar-background {
   background-color: #ddd;
   height: 10px;
@@ -191,23 +189,11 @@ button.btn {
   }
 }
 
-.dashboard-centered-content {
+.page-centered-content {
   justify-content: center;
   align-items: center;
   padding-left: 10%;
   padding-right: 10%;
-}
-
-
-.dashboard-content {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  padding: 0 20px;
-}
-
-.meter-list {
-  margin: 20px 0;
 }
 
 .meter-list h2 {
@@ -251,13 +237,6 @@ button.btn {
   width: 100%;
 }
 
-.energy-usage-chart, .energy-usage-pie-chart, .progress-meter, .newsletter-counter, .meter-list {
-  background: #fff;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
 .chart, .pie-chart {
   height: 200px;
   margin-top: 10px;
@@ -267,3 +246,21 @@ button.btn {
   justify-content: center;
   border-radius: 4px;
 }
+
+/* Table */
+.header-with-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Optional: Style for the sorting button for visual improvement */
+.table .btn-sm {
+  padding: 0.25rem 0.5rem;
+  margin-left: 10px; /* Ensures some space between the text and the button */
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+}
+

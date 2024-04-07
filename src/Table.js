@@ -1,33 +1,50 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useState } from "react";
 import NavBarr from "./components/NavBarr";
 import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import Card from "react-bootstrap/Card";
 import "./App.css";
 
 const Table = () => {
-  const data = [
+  const initialData = [
     { rok: 2020, zuzycie: "150 kWh", wartosc: "$100" },
     { rok: 2021, zuzycie: "200 kWh", wartosc: "$130" },
     { rok: 2022, zuzycie: "180 kWh", wartosc: "$120" },
   ];
 
+  const [data, setData] = useState(initialData);
+  const [sortConfig, setSortConfig] = useState({ key: null, direction: "ascending" });
+
+  // Function to sort data
+  const sortData = (key) => {
+    let direction = "ascending";
+    if (sortConfig.key === key && sortConfig.direction === "ascending") {
+      direction = "descending";
+    }
+    const sortedData = [...data].sort((a, b) => {
+      if (a[key] < b[key]) return direction === "ascending" ? -1 : 1;
+      if (a[key] > b[key]) return direction === "ascending" ? 1 : -1;
+      return 0;
+    });
+    setData(sortedData);
+    setSortConfig({ key, direction });
+  };
+
   return (
     <div>
       <NavBarr />
-      <div className="centered-content">
-        <div className="about-content">
-          <h1>About Counter</h1>
-          <p>
-            This is a simple table to demonstrate data rendering in React with
-            Bootstrap styling.
-          </p>
+      <div className="page-centered-content">
+        <section className="table-info">
           <table className="table table-bordered table-hover">
             <thead className="thead-dark">
               <tr>
-                <th scope="col">Rok</th>
-                <th scope="col">Zużycie</th>
-                <th scope="col">Wartość</th>
+                <th scope="col">Rok 
+                  <Button size="sm" onClick={() => sortData('rok')}>Sort</Button>
+                </th>
+                <th scope="col">Zużycie 
+                  <Button size="sm" onClick={() => sortData('zuzycie')}>Sort</Button>
+                </th>
+                <th scope="col">Wartość 
+                  <Button size="sm" onClick={() => sortData('wartosc')}>Sort</Button>
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -40,7 +57,7 @@ const Table = () => {
               ))}
             </tbody>
           </table>
-        </div>
+        </section>
       </div>
     </div>
   );
