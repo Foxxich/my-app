@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&display=swap');
+
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
 :root {
   --navbar-height: 60px;
 }
@@ -138,13 +144,72 @@ button.btn {
   justify-content: space-between;
 }
 
-.dashboard-item, .energy-usage-chart, .energy-usage-pie-chart, .meter-list, .table-info {
+.energy-usage-chart, .energy-usage-pie-chart, .meter-list, .table-info {
   background: #fff;
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   margin: 10px; /* Ensure there's a margin on both sides */
   flex-grow: 1;
+}
+
+.dashboard-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center items vertically */
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin: 10px; /* Ensure there's a margin on both sides */
+}
+
+.meter-list h2 {
+  margin-bottom: 15px;
+}
+
+.meter {
+  margin:0%;
+  padding: 0%;
+}
+
+.meter-number {
+  font-weight: bold;
+  width: 30px; /* Width of the label area */
+  display: inline-block;
+}
+
+.meter-bar {
+  height: 20px;
+  border-radius: 5px;
+  color: white;
+  line-height: 20px;
+  padding-left: 5px;
+  background-color: #ddd;
+  overflow: hidden; /* Ensure the content doesn't overflow */
+  position: relative; /* For text positioning */
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.meter-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  background-color: inherit;
+  transition: width 0.4s ease;
+}
+
+.meter-bar:hover::before {
+  width: 100%;
+}
+
+.meter-number {
+  display: none;
 }
 
 .icon {
@@ -155,7 +220,7 @@ button.btn {
 .progress-bar-background {
   background-color: #ddd;
   height: 10px;
-  width: 100%;
+  width: 50%;
   border-radius: 5px;
   overflow: hidden;
 }
@@ -194,47 +259,6 @@ button.btn {
   align-items: center;
   padding-left: 10%;
   padding-right: 10%;
-}
-
-.meter-list h2 {
-  margin-bottom: 15px;
-}
-
-.meter {
-  margin:0%;
-  padding: 0%;
-}
-
-.meter-number {
-  font-weight: bold;
-  width: 30px; /* Width of the label area */
-  display: inline-block;
-}
-
-.meter-bar {
-  height: 20px;
-  border-radius: 5px;
-  color: white;
-  line-height: 20px;
-  padding-left: 5px;
-  background-color: #ddd;
-  overflow: hidden; /* Ensure the content doesn't overflow */
-  position: relative; /* For text positioning */
-}
-
-.meter-bar::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  background-color: inherit;
-  transition: width 0.4s ease;
-}
-
-.meter-bar:hover::before {
-  width: 100%;
 }
 
 .chart, .pie-chart {
