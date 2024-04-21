@@ -20,7 +20,7 @@ export default function NavBarr() {
             <Nav.Link>Table</Nav.Link>
           </LinkContainer>
           <LinkContainer to="/Chart">
-            <Nav.Link>Chart</Nav.Link>
+            <Nav.Link>Personal Data</Nav.Link>
           </LinkContainer>
           <LinkContainer to="/login">
             <Nav.Link>Login</Nav.Link>

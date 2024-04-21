@@ -3,6 +3,7 @@ import "./App.css";
 import NavBarr from "./components/NavBarr";
 import Plot from "react-plotly.js";
 import MyLineChart from "./Charts";
+import MyLineChart2 from "./Charts2";
 import PieChart from "./PieChart";
 
 const Dashboard = () => {
@@ -41,6 +42,33 @@ const Dashboard = () => {
 
   const progressPercentage = 10;
 
+  const hourlyEnergyData = {
+    x: ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', 
+        '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'],
+    y: [300, 290, 270, 250, 230, 210, 330, 350, 370, 390, 410, 430, 450, 470, 490, 510, 530, 550, 570, 590, 610, 630, 650, 670],
+    type: 'bar',
+    marker: {
+      color: 'rgb(58,200,225)',
+    },
+  };
+
+  const layoutHourly = {
+    title: 'Zużycie energii na godzinę',
+    xaxis: {
+      title: 'Godzina',
+    },
+    yaxis: {
+      title: 'Zużycie (kWh)',
+    },
+    margin: {
+      l: 50,
+      r: 50,
+      b: 100,
+      t: 50,
+    },
+    bargap: 0.05,
+  };
+
   return (
     <div>
       {/* Navigation Bar Placeholder */}
@@ -55,7 +83,7 @@ const Dashboard = () => {
             {/* Bootstrap icon */}
           </div>
           <div className="dashboard-item monthly-savings">
-            <span>EKONOMIA MIESIĘCZNA: 50,00 PLN</span>
+            <span>OSZCZĘDNOŚĆ MIESIĘCZNA: 50,00 PLN</span>
             <i className="bi bi-piggy-bank icon"></i> {/* Bootstrap icon */}
           </div>
           <div className="dashboard-item annual-progress">
@@ -78,17 +106,31 @@ const Dashboard = () => {
         </section>
 
         <section className="energy-usage-chart">
-          <h2>Zużycie energii</h2>
+          <h2>Koszty zużytej energii</h2>
           <div className="chart">
           <MyLineChart />
           </div>
         </section>
 
+        <section className="energy-usage-chart">
+          <h2>Ilość zużytej energii (kWH)</h2>
+          <div className="chart">
+          <MyLineChart2 />
+          </div>
+        </section>
+
         {/* Energy Usage Pie Chart Placeholder */}
         <section className="energy-usage-pie-chart">
-          <h2>Podział zużytej energii</h2>
+          <h2>Podział dzienny zużytej energii</h2>
           <div className="pie-chart">
             <PieChart/>
+          </div>
+        </section>
+
+        <section className="meter-list">
+          <h2>Zużycie energii na godzinę</h2>
+          <div className="ess">
+            <Plot data={[hourlyEnergyData]} layout={layoutHourly} />
           </div>
         </section>
 

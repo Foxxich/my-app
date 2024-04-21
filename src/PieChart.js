@@ -9,23 +9,20 @@ const PieChart = () => {
     const chart = new Chart(ctx, {
       type: 'pie',
       data: {
-        labels: ['Odnawialne', 'Węgiel', 'Gaz', 'Jądrowa', 'Inne'],
+        labels: ['Szczyt przedpołudniowy', 'Szczyt popołudniowy', 'Pozostałe godziny doby'],
         datasets: [{
           label: 'Podział zużytej energii',
-          data: [20, 25, 15, 30, 10], // Example data
+          data: [40, 40, 20], // Example data
           backgroundColor: [
             'rgba(255, 99, 132, 0.6)',
             'rgba(54, 162, 235, 0.6)',
             'rgba(255, 206, 86, 0.6)',
-            'rgba(75, 192, 192, 0.6)',
-            'rgba(153, 102, 255, 0.6)'
           ],
           borderColor: [
             'rgba(255, 99, 132, 1)',
             'rgba(54, 162, 235, 1)',
             'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)'
+
           ],
           borderWidth: 1
         }]

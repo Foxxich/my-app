@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 
-const MyLineChart = () => {
+const MyLineChart2 = () => {
   const chartRef = useRef(null);
 
   useEffect(() => {
-    const ctx = document.getElementById("myAreaChart").getContext("2d");
+    const ctx = document.getElementById("myAreaChart2").getContext("2d");
 
     // Clean up the chart if it already exists
     if (chartRef.current) {
@@ -21,19 +21,19 @@ const MyLineChart = () => {
           "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień",
         ],
         datasets: [{
-          label: "Koszty",
+          label: "Zużyta energia",
           lineTension: 0.3,
-          backgroundColor: "rgba(78, 115, 223, 0.05)",
-          borderColor: "rgba(78, 115, 223, 1)",
+          backgroundColor: 'rgba(255, 99, 132, 0.05)',
+          borderColor: 'rgba(255, 99, 132, 1)',
           pointRadius: 3,
-          pointBackgroundColor: "rgba(78, 115, 223, 1)",
-          pointBorderColor: "rgba(78, 115, 223, 1)",
+          pointBackgroundColor: 'rgba(255, 99, 132, 1)',
+          pointBorderColor: 'rgba(255, 99, 132, 1)',
           pointHoverRadius: 3,
-          pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
-          pointHoverBorderColor: "rgba(78, 115, 223, 1)",
+          pointHoverBackgroundColor: 'rgba(255, 99, 132, 1)',
+          pointHoverBorderColor: 'rgba(255, 99, 132, 1)',
           pointHitRadius: 10,
           pointBorderWidth: 2,
-          data: [134, 221, 126, 176, 0, 0, 0, 0, 0, 0, 0, 0],
+          data: [56, 123, 67, 88, 0, 0, 0, 0, 0, 0, 0, 0],
         }],
       },
       options: {
@@ -64,7 +64,7 @@ const MyLineChart = () => {
               maxTicksLimit: 5,
               padding: 10,
               callback: function(value) {
-                return '$' + value;
+                return 'kWh' + value;
               }
             },
             grid: {
@@ -111,8 +111,8 @@ const MyLineChart = () => {
     };
   }, []); // Ensure this runs once upon mounting
 
-  return <canvas id="myAreaChart" width="855" height="320"></canvas>;
+  return <canvas id="myAreaChart2" width="855" height="320"></canvas>;
 }
 
-export default MyLineChart;
+export default MyLineChart2;
 
