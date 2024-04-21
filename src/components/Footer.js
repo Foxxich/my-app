@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import "bootstrap-icons/font/bootstrap-icons.css"; // Make sure to import the Bootstrap Icons CSS
+import myImage from './CounterEnergy.png';
 
 const Footer = () => {
   return (
@@ -18,25 +19,23 @@ const Footer = () => {
         <div className="social-media">
           <h5>Follow Us</h5>
           <row>
-          <a href="https://www.facebook.com" className="social-link">
-            <i className="bi bi-facebook"></i> Facebook
-          </a>
+            <a href="https://www.facebook.com" className="social-link">
+              <i className="bi bi-facebook"></i> Facebook
+            </a>
           </row>
           <row>
-          <a href="https://www.twitter.com" className="social-link">
-            <i className="bi bi-twitter"></i> Twitter
-          </a>
+            <a href="https://www.twitter.com" className="social-link">
+              <i className="bi bi-twitter"></i> Twitter
+            </a>
           </row>
           <row>
-          <a href="https://www.instagram.com" className="social-link">
-            <i className="bi bi-instagram"></i> Instagram
-          </a>
+            <a href="https://www.instagram.com" className="social-link">
+              <i className="bi bi-instagram"></i> Instagram
+            </a>
           </row>
         </div>
         <div className="footer-logo">
-          <h5>
-            <i className="bi bi-bootstrap-fill"></i> Your Logo Here
-          </h5>
+          <img src={myImage} alt="Description of image" />
           {/* If you have a logo image, you can include it like this:
           <img src="path-to-your-logo.png" alt="Your Logo" /> */}
         </div>

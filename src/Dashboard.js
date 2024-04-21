@@ -33,18 +33,41 @@ const Dashboard = () => {
   };
 
   const meters = [
-    { id: 1, color: "#e74a3b", progress: 20 },
-    { id: 2, color: "#f6c23e", progress: 40 }, 
-    { id: 3, color: "#6610f2", progress: 60 }, 
-    { id: 4, color: "#36b9cc", progress: 80 }, 
-    { id: 5, color: "#1cc88a", progress: 100, label: "Complete!" }, 
+    {
+      id: 1,
+      name: 'Kuchnia',
+      description: 'Zużycie prądu przez urządzenia kuchenne',
+      progress: 50,
+      color: 'green', // jasny żółty
+    },
+    {
+      id: 2,
+      name: 'Salon',
+      description: 'Zużycie prądu w salonie (TV, oświetlenie, itp.)',
+      progress: 30,
+      color: '#ff9800', // pomarańczowy
+    },
+    {
+      id: 3,
+      name: 'Łazienka',
+      description: 'Energia zużywana przez grzejnik i oświetlenie łazienkowe',
+      progress: 20,
+      color: '#03a9f4', // jasny niebieski
+    },
+    {
+      id: 4,
+      name: 'Pokój dziecięcy',
+      description: 'Zużycie prądu przez lampki nocne i komputer',
+      progress: 40,
+      color: '#e91e63', // różowy
+    },
   ];
 
   const progressPercentage = 10;
 
   const hourlyEnergyData = {
-    x: ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', 
-        '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'],
+    x: ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00',
+      '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'],
     y: [300, 290, 270, 250, 230, 210, 330, 350, 370, 390, 410, 430, 450, 470, 490, 510, 530, 550, 570, 590, 610, 630, 650, 670],
     type: 'bar',
     marker: {
@@ -108,14 +131,14 @@ const Dashboard = () => {
         <section className="energy-usage-chart">
           <h2>Koszty zużytej energii</h2>
           <div className="chart">
-          <MyLineChart />
+            <MyLineChart />
           </div>
         </section>
 
         <section className="energy-usage-chart">
           <h2>Ilość zużytej energii (kWH)</h2>
           <div className="chart">
-          <MyLineChart2 />
+            <MyLineChart2 />
           </div>
         </section>
 
@@ -123,7 +146,7 @@ const Dashboard = () => {
         <section className="energy-usage-pie-chart">
           <h2>Podział dzienny zużytej energii</h2>
           <div className="pie-chart">
-            <PieChart/>
+            <PieChart />
           </div>
         </section>
 
@@ -140,6 +163,8 @@ const Dashboard = () => {
           {meters.map((meter) => (
             <div key={meter.id} className="meter">
               <span className="meter-number">{meter.id}</span>
+              <span className="meter-title">{meter.name}</span>
+              <span className="meter-description">{meter.description}</span>
               <div
                 className="meter-bar"
                 style={{
@@ -147,11 +172,13 @@ const Dashboard = () => {
                   backgroundColor: meter.color,
                 }}
               >
-                {meter.progress < 100 ? `${meter.progress}%` : meter.label}
+                {meter.progress < 100 ? `${meter.progress}%` : 'Pełny'}
               </div>
             </div>
           ))}
         </section>
+
+
       </div>
     </div>
   );

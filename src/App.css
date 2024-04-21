@@ -153,6 +153,17 @@ button.btn {
   flex-grow: 1;
 }
 
+.meter-title {
+  font-weight: bold;
+  display: block;
+}
+
+.meter-description {
+  color: #616161;
+  font-size: 0.9em;
+  margin-bottom: 0.5em;
+}
+
 .dashboard-item {
   display: flex;
   justify-content: space-between;
@@ -220,7 +231,7 @@ button.btn {
 .progress-bar-background {
   background-color: #ddd;
   height: 10px;
-  width: 50%;
+  width: 30%;
   border-radius: 5px;
   overflow: hidden;
 }
