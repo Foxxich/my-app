@@ -43,7 +43,7 @@ const Dashboard = () => {
     {
       id: 2,
       name: 'Salon',
-      description: 'Zużycie prądu w salonie (TV, oświetlenie, itp.)',
+      description: 'Zużycie prądu w salonie',
       progress: 30,
       color: '#ff9800', // pomarańczowy
     },
