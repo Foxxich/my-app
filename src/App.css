@@ -147,7 +147,7 @@ button.btn {
 .energy-usage-chart, .energy-usage-pie-chart, .meter-list, .table-info {
   background: #fff;
   border-radius: 8px;
-  padding: 20px;
+  padding: 40px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   margin: 10px; /* Ensure there's a margin on both sides */
   flex-grow: 1;
@@ -273,13 +273,14 @@ button.btn {
 }
 
 .chart, .pie-chart {
-  height: 200px;
+  height: 300px;
   margin-top: 10px;
   background-color: #eee;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 4px;
+  flex-wrap: wrap;
 }
 
 .ess {

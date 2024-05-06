@@ -1,25 +1,32 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Chart from 'chart.js/auto';
 
 const MyLineChart = () => {
+  const [tariff, setTariff] = useState('Standardowa');
   const chartRef = useRef(null);
+  const initialData = [134, 221, 126, 176, 0, 0, 0, 0, 0, 0, 0, 0]; // Initial hardcoded data
+
+  const tariffs = {
+    Standardowa: 0.15,
+    Nocna: 0.10,
+    Weekendowa: 0.13,
+    Ekologiczna: 0.12,
+    Dynamiczna: 0.20
+  };
 
   useEffect(() => {
     const ctx = document.getElementById("myAreaChart").getContext("2d");
+    const newTariffRate = tariffs[tariff];
+    const newData = initialData.map(value => Math.round(value * newTariffRate));
 
-    // Clean up the chart if it already exists
     if (chartRef.current) {
       chartRef.current.destroy();
     }
 
-    // Initialize a new Chart instance
     chartRef.current = new Chart(ctx, {
       type: "line",
       data: {
-        labels: [
-          "Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec",
-          "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień",
-        ],
+        labels: ["Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"],
         datasets: [{
           label: "Koszty",
           lineTension: 0.3,
@@ -33,7 +40,7 @@ const MyLineChart = () => {
           pointHoverBorderColor: "rgba(78, 115, 223, 1)",
           pointHitRadius: 10,
           pointBorderWidth: 2,
-          data: [134, 221, 126, 176, 0, 0, 0, 0, 0, 0, 0, 0],
+          data: newData,
         }],
       },
       options: {
@@ -100,19 +107,28 @@ const MyLineChart = () => {
             }
           }
         }
-      }
+      } // keep the existing chart options here
     });
 
-    // Cleanup function to destroy chart instance on component unmount
     return () => {
       if (chartRef.current) {
         chartRef.current.destroy();
       }
     };
-  }, []); // Ensure this runs once upon mounting
+  }, [tariff]); // Dependency on tariff ensures re-render when it changes
 
-  return <canvas id="myAreaChart" width="855" height="320"></canvas>;
+  return (
+    <>
+      <canvas id="myAreaChart" width="855" height="320"></canvas>
+      <select value={tariff} onChange={(event) => setTariff(event.target.value)}>
+        <option value="Standardowa">Taryfa Standardowa</option>
+        <option value="Nocna">Taryfa Nocna</option>
+        <option value="Weekendowa">Taryfa Weekendowa</option>
+        <option value="Ekologiczna">Taryfa Ekologiczna</option>
+        <option value="Dynamiczna">Taryfa Dynamiczna</option>
+      </select>
+    </>
+  );
 }
 
 export default MyLineChart;
-
